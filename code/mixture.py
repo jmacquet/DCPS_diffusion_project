@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
-# Device configuration
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # --- HYPERPARAMÈTRES DCPS (Table 1 config) ---
@@ -18,7 +17,6 @@ zeta = 0.1         # Learning rate for optimizing mu, upsilon
 gamma = 0.02     # Step size for Langevin
 sigma_y = 0.05   # Noise on observations
 
-# Définition des blocs (indices de temps)
 k_intervals = np.linspace(0, T_steps, L_blocks + 1, dtype=int) # k_L = T, k_0 = 0
 print("k_intervals:", k_intervals)
 
